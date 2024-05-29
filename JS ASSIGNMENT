@@ -1,0 +1,40 @@
+// create a variable to hold your NFTs
+let digitalArtCollection = [];
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function createNFT(artist, yearCreated, medium, dimensions) {
+    const nft = {
+        artist: artist,
+        yearCreated: yearCreated,
+        medium: medium,
+        dimensions: dimensions
+    };
+    digitalArtCollection.push(nft);
+}
+
+// create a "loop" that will go through an "array" of NFTs
+// and print their metadata with console.log()
+function displayNFTs() {
+    for (let i = 0; i < digitalArtCollection.length; i++) {
+        console.log(`Artist: ${digitalArtCollection[i].artist}`);
+        console.log(`Year Created: ${digitalArtCollection[i].yearCreated}`);
+        console.log(`Medium: ${digitalArtCollection[i].medium}`);
+        console.log(`Dimensions: ${digitalArtCollection[i].dimensions}`);
+        console.log('---------------------');
+    }
+}
+
+// print the total number of NFTs we have minted to the console
+function totalNFTs() {
+    return digitalArtCollection.length;
+}
+
+// call your functions below this line
+createNFT("Leonardo da Vinci", 1503, "Oil on Poplar", "77 cm x 53 cm");
+createNFT("Vincent van Gogh", 1889, "Oil on Canvas", "73.7 cm x 92.1 cm");
+createNFT("Pablo Picasso", 1937, "Oil on Canvas", "349 cm x 776 cm");
+
+displayNFTs();
+console.log(`Total NFTs in collection: ${totalNFTs()}`);
